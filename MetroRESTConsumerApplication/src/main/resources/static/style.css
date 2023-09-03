@@ -1,0 +1,83 @@
+.b1 {
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: fit-content;
+    border-radius: 3px;
+}
+
+.index
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+
+}
+
+.loginForm {
+    width: 300px;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 0 auto;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+
+}
+
+.loginForm input[type="text"]{
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+.loginForm input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+.loginForm input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+h1{
+    text-align: center;
+    text-decoration-color: brown;
+}
+h4
+{
+    text-align: center;
+    text-decoration-color: brown;
+}
+h3
+{
+    text-align: center;
+    text-decoration-color: brown;
+}
+
+a:link{
+    color:white;
+}
+
+
+
+
+
+
+
+
+
+
+
