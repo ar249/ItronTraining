@@ -5,6 +5,7 @@ import com.example.stationsapimetro.service.serviceInterface;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -16,7 +17,7 @@ public class StationController {
     @Autowired
     serviceInterface serviceInterface;
 
-    @RequestMapping("/liststations")
+    @GetMapping("/liststations")
     public ResponseEntity<List<Stations>> getStationList(){
         List<Stations> stationsList = serviceInterface.listStations();
         return new ResponseEntity<>(stationsList, HttpStatus.OK);

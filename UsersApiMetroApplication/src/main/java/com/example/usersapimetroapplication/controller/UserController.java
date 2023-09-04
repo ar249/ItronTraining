@@ -44,9 +44,11 @@ public class UserController {
         return new ResponseEntity<>(u, HttpStatus.OK);
     }
 
-    @GetMapping(path = "/recharge/{email}/{amt}")
+    @PutMapping(path = "/recharge/{email}/{amt}")
     public ResponseEntity<String> recharge(@PathVariable("email") String email, @PathVariable("amt") int amt) {
-        serviceInterface.recharge(email, amt);
+        int curr = serviceInterface.getBalance(email).getBalance();
+        int newAmt = curr + amt;
+        serviceInterface.updateFare(email, newAmt);
         return new ResponseEntity<>("Recharge Successful", HttpStatus.OK);
 
     }

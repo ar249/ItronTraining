@@ -53,10 +53,10 @@ public class serviceImplementation implements serviceInterface{
         return u.getBalance();
     }
 
-    public String recharge(String email, int amt)
+    public void recharge(String email, int amt)
     {
-       String str = restTemplate.getForObject("http://localhost:8082/recharge/"+email+"/"+amt,String.class);
-       return str;
+      restTemplate.put("http://localhost:8082/recharge/"+email+"/"+amt,String.class);
+
     }
 
     public List<Stations> getStations()

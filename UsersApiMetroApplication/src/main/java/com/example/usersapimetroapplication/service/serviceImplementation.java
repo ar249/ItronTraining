@@ -67,18 +67,7 @@ public class serviceImplementation implements serviceInterface {
         }
         return null;
     }
-
-    public void recharge(String email, int amt)
-    {
-        Optional<Users> user = usersDao.findById(email);
-        if(user.isPresent())
-        {
-            Users u1 = user.get();
-            u1.setBalance(u1.getBalance()+amt);
-            usersDao.save(u1);
-        }
-    }
-
+    
     @Override
     public void updateFare(String email, int amt) {
         Optional<Users> u = usersDao.findById(email);

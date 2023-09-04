@@ -11,7 +11,7 @@ public interface serviceInterface {
     public int generateCard();
     public boolean verify(Users u);
     public int balance(String email);
-    public String recharge (String email, int amt);
+    public void recharge (String email, int amt);
     public List<Stations> getStations();
     public String fare(Travel t);
     public boolean userPresent(String email);

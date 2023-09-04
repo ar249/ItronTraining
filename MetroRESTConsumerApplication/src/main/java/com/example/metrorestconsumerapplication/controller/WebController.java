@@ -27,18 +27,6 @@ public class WebController {
         return modelAndView;
     }
 
-    @GetMapping(path = "/register" )
-    public ModelAndView addUser()
-    {
-        return new ModelAndView("register","usr",new Users());
-    }
-
-    @RequestMapping(path = "/thankYou" )
-    public ModelAndView thankYou()
-    {
-        return new ModelAndView("thankYou");
-    }
-
     @PostMapping(path = "/add")
     public ModelAndView register(@ModelAttribute("usr") Users u)
     {   ModelAndView modelAndView = new ModelAndView();
@@ -62,11 +50,6 @@ public class WebController {
          return modelAndView;
     }
 
-    @GetMapping(path="/login")
-    public ModelAndView login()
-    {
-        return new ModelAndView("login","usr",new Users());
-    }
 
     @PostMapping (path="/verify")
     public ModelAndView verify(@ModelAttribute Users u, HttpSession session)
@@ -106,17 +89,6 @@ public class WebController {
         return modelAndView;
     }
 
-    @RequestMapping("/userMenu")
-    public ModelAndView showUserMenu()
-    {
-        return new ModelAndView("userMenu");
-    }
-
-    @RequestMapping("/mainMenu")
-    public ModelAndView showMainMenu()
-    {
-        return new ModelAndView("index");
-    }
 
     @PostMapping(path = "/calculate")
     public ModelAndView calculateFare(@ModelAttribute Travel t, HttpServletRequest request)
@@ -152,11 +124,6 @@ public class WebController {
          return modelAndView;
     }
 
-    @GetMapping(path = "/recharge")
-    public ModelAndView recharge()
-    { return new ModelAndView("recharge");
-    }
-
     @GetMapping(path="/addbal")
     public ModelAndView rechargeDone(@RequestParam("amount")int amt, HttpSession session)
     {
@@ -169,10 +136,47 @@ public class WebController {
         modelAndView.setViewName("recharge");
         return modelAndView;
     }
-       String str = serviceInterface.recharge(session.getAttribute("id").toString(),amt);
+       serviceInterface.recharge(session.getAttribute("id").toString(),amt);
+        String str = "Recharge Successful !!";
        ModelAndView modelAndView = new ModelAndView();
        modelAndView.addObject("msg",str);
        modelAndView.setViewName("userMenu");
        return modelAndView;
+    }
+
+    @GetMapping(path="/login")
+    public ModelAndView login()
+    {
+        return new ModelAndView("login","usr",new Users());
+    }
+
+    @GetMapping(path = "/register" )
+    public ModelAndView addUser()
+    {
+        return new ModelAndView("register","usr",new Users());
+    }
+
+    @RequestMapping(path = "/thankYou" )
+    public ModelAndView thankYou()
+    {
+        return new ModelAndView("thankYou");
+    }
+
+    @RequestMapping("/userMenu")
+    public ModelAndView showUserMenu()
+    {
+        return new ModelAndView("userMenu");
+    }
+
+    @RequestMapping("/mainMenu")
+    public ModelAndView showMainMenu()
+    {
+        return new ModelAndView("index");
+    }
+
+    @GetMapping(path = "/recharge")
+    public ModelAndView recharge()
+    {
+        return new ModelAndView("recharge");
     }
 }
