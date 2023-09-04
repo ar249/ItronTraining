@@ -124,12 +124,12 @@ public class WebController {
          return modelAndView;
     }
 
-    @GetMapping(path="/addbal")
+    @PostMapping(path="/addbal")
     public ModelAndView rechargeDone(@RequestParam("amount")int amt, HttpSession session)
     {
         String msg = "";
         if(amt<=0)
-    {
+        {
         msg = "Please enter a valid amount";
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.addObject("msg",msg);

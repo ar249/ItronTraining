@@ -12,7 +12,7 @@
 <h4>${msg}</h4>
 <br>
     <br>
-    <form action="./addbal" class="loginForm">
+    <form action="./addbal" class="loginForm" method="post">
         <p>  Enter Recharge Amount :: <input type = "number", name="amount" required/> </p>
 <input type="submit"><br>
         <p>   <button><a href="./userMenu">Go Back</a></button></p>
